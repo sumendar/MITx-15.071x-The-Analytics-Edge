@@ -3,7 +3,7 @@ setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1-
 # VIDEO 2
 
 # Basic Calculations
-8*6
+8*16
 2^16
 2^
 8*6
