@@ -63,14 +63,14 @@ str(WHO_Europe)
 write.csv(WHO_Europe,"WHO_Europe.csv") #write any file to the location
 ls()
 # 
-# # Removing variables
+# # #####Removing variables########
 rm(WHO_Europe)
 ls()
 # 
 # 
 # # VIDEO 5
 # 
-# # Basic data analysis 
+# # ######Basic data analysis ########
 # 
 mean(WHO$Under15)  
 sd(WHO$Under15)
@@ -80,9 +80,9 @@ WHO$Country[86]
 which.max(WHO$Under15)
 WHO$Country[124]
 # 
-# Scatterplot
+########### Scatterplot########
 plot(WHO$GNI, WHO$FertilityRate)
-# # Subsetting
+# ##### Subsetting#####
 Outliers <-  subset(WHO, GNI > 10000 & FertilityRate>2.5) 
 nrow(Outliers)#how many rows in the above subset
 Outliers[c("Country","GNI","FertilityRate")]
@@ -90,16 +90,15 @@ Outliers[c("Country","GNI","FertilityRate")]
 # 
 # # VIDEO 6
 # 
-# # Histograms
+# # #######Histograms########
 hist(WHO$CellularSubscribers) #histogram is usefull to understand the distribution of a variable
 # 
-# # Boxplot
+# ###### Boxplot v########
 boxplot(WHO$LifeExpectancy ~ WHO$Region)  # Boxplot is used to understand the statistical range of a variable
+boxplot(WHO$LifeExpectancy ~ WHO$Region, xlab ="Countries", ylab= "LifeExpectancy", main ="Life expectency of Countries by Region")# 
+table(WHO$Region)
 
 # 
-
-
-# 
-# # Summary Tables
+# ####### Summary Tables ###########
 
 # 
