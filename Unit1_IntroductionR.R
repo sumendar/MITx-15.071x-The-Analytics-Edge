@@ -80,26 +80,21 @@ WHO$Country[86]
 which.max(WHO$Under15)
 WHO$Country[124]
 # 
-
-# 
-
-# 
-
-# 
-# # Subsetting
+# Scatterplot
 plot(WHO$GNI, WHO$FertilityRate)
+# # Subsetting
 Outliers <-  subset(WHO, GNI > 10000 & FertilityRate>2.5) 
-nrow(Outliers)
+nrow(Outliers)#how many rows in the above subset
 Outliers[c("Country","GNI","FertilityRate")]
 # 
 # 
 # # VIDEO 6
 # 
 # # Histograms
-
+hist(WHO$CellularSubscribers) #histogram is usefull to understand the distribution of a variable
 # 
 # # Boxplot
-
+boxplot(WHO$LifeExpectancy ~ WHO$Region)  # Boxplot is used to understand the statistical range of a variable
 
 # 
 
