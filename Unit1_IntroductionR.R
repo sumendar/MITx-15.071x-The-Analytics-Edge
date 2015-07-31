@@ -72,7 +72,7 @@ ls()
 # 
 # # ######Basic data analysis ########
 # 
-mean(WHO$Under15)  
+mean(WHO$Under15)
 sd(WHO$Under15)
 summary(WHO$Under15)
 which.min(WHO$Under15)

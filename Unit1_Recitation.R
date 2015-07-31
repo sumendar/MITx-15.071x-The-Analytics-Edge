@@ -24,7 +24,9 @@ which.max(USDA$Sodium)
   
 # Get names of variables in the dataset
 names(USDA)
-  
+USDA$Calories
+which.max(USDA$Calories)
+USDA$Description[289]  
 # Get the name of the food with highest sodium levels
 USDA$Description[265]
   
@@ -32,23 +34,29 @@ USDA$Description[265]
 HighSodium <- subset(USDA,Sodium>10000)
   
 # Count the number of rows, or observations
-nrow()
+nrow(HighSodium)
 
 # Output names of the foods with high sodium content
+HighSodium$Description
   
 # Finding the index of CAVIAR in the dataset
+match("CAVIAR",USDA$Description)
   
 # Find amount of sodium in caviar
+USDA$Sodium [4154]
   
 # Doing it in one command!
+USDA$Sodium[match("CAVIAR",USDA$Description)]
   
 # Summary function over Sodium vector
+summary(USDA$Sodium)
   
 # Standard deviation
+sd(USDA$Sodium)  
+sd(USDA$Sodium,na.rm = TRUE)
   
   
-  
-# Video 4 - Plots
+  # Video 4 - Plots
 
 # Scatter Plots
   
