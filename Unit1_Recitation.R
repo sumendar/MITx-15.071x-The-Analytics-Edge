@@ -54,7 +54,7 @@ summary(USDA$Sodium)
 # Standard deviation
 sd(USDA$Sodium)  
 sd(USDA$Sodium,na.rm = TRUE)
-View(USDA)  
+# View(USDA)  
   
   # Video 4 - Plots
 
@@ -101,12 +101,19 @@ str(USDA)
 # Video 6 - Summary Tables
 
 # How many foods have higher Sodium level than average?
-  
+table(USDA$HighSodium)  
 # How many foods have both high Sodium and high fat?
+table(USDA$HighSodium,USDA$HighFat)
   
 # Average amount of iron sorted by high and low protein?
-  
+tapply(USDA$Iron, USDA$HighProtein, mean,na.rm="TRUE")
+
 # Maximum level of Vitamin C in hfoods with high and low carbs?
-  
+tapply(USDA$VitaminC, USDA$HigCarbs, max, na.rm="TRUE")
+tapply(USDA$VitaminC, USDA$HigCarbs, max,na.rm="TRUE")
+##error is coming check out  
 # Using summary function with tapply
+tapply(USDA$VitaminC, USDA$HigCarbs, summary,na.rm="TRUE")
+
+
   
