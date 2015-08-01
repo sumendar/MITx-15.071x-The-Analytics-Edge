@@ -19,7 +19,7 @@ summary(USDA)
 # Vector notation
 USDA$Sodium
   
-# Finding the index of the food with highest sodium levels
+# Finding the index of the food with highest Sodium levels
 which.max(USDA$Sodium)
   
 # Get names of variables in the dataset
@@ -27,22 +27,22 @@ names(USDA)
 USDA$Calories
 which.max(USDA$Calories)
 USDA$Description[289]  
-# Get the name of the food with highest sodium levels
+# Get the name of the food with highest Sodium levels
 USDA$Description[265]
   
-# Create a subset of the foods with sodium content above 10,000mg
+# Create a subset of the foods with Sodium content above 10,000mg
 HighSodium <- subset(USDA,Sodium>10000)
   
 # Count the number of rows, or observations
 nrow(HighSodium)
 
-# Output names of the foods with high sodium content
+# Output names of the foods with high Sodium content
 HighSodium$Description
   
 # Finding the index of CAVIAR in the dataset
 match("CAVIAR",USDA$Description)
   
-# Find amount of sodium in caviar
+# Find amount of Sodium in caviar
 USDA$Sodium [4154]
   
 # Doing it in one command!
@@ -76,19 +76,33 @@ boxplot(USDA$Sugar,main="Box plot of sugar levels",ylab="sugar (g)")
 
 # Video 5 - Adding a variable
 
-# Creating a variable that takes value 1 if the food has higher sodium than average, 0 otherwise
+# Creating a variable that takes value 1 if the food has higher Sodium than average, 0 otherwise
+USDA$Sodium[1] > mean(USDA$Sodium,na.rm = TRUE)
+USDA$Sodium[50] > mean(USDA$Sodium,na.rm = TRUE)
   
 # Adding the variable to the dataset
-  
+HighSodium <- USDA$Sodium > mean(USDA$Sodium,na.rm = TRUE)  
+str(HighSodium)
+HighSodium <- as.numeric(USDA$Sodium > mean(USDA$Sodium,na.rm = TRUE))  
+USDA$HighSodium <- as.numeric(USDA$Sodium > mean(USDA$Sodium,na.rm = TRUE))  
+str(USDA)
+#rm(HighSodium) this command is used to remove a column from R environment only but
+#USDA$HighSodium <- NULL  ##through this command we can drop entire column from csv file from data frame
+str(USDA)
+#USDA$HighSodium <- NULL
+str(USDA)
 # Similarly for HighProtein, HigCarbs, HighFat
-  
-
-
+USDA$HighProtein <- as.numeric(USDA$Protein > mean(USDA$Protein,na.rm = TRUE))
+str(USDA)  
+USDA$HigCarbs <- as.numeric(USDA$Carbohydrate > mean(USDA$Carbohydrate,na.rm = TRUE))
+str(USDA)  
+USDA$HighFat <- as.numeric(USDA$TotalFat > mean(USDA$TotalFat,na.rm = TRUE))
+str(USDA)  
 # Video 6 - Summary Tables
 
-# How many foods have higher sodium level than average?
+# How many foods have higher Sodium level than average?
   
-# How many foods have both high sodium and high fat?
+# How many foods have both high Sodium and high fat?
   
 # Average amount of iron sorted by high and low protein?
   
