@@ -54,24 +54,25 @@ summary(USDA$Sodium)
 # Standard deviation
 sd(USDA$Sodium)  
 sd(USDA$Sodium,na.rm = TRUE)
-  
+View(USDA)  
   
   # Video 4 - Plots
 
 # Scatter Plots
+plot(USDA$Protein,USDA$TotalFat)
   
 # Add xlabel, ylabel and title
-  
+plot(USDA$Protein,USDA$TotalFat,xlab = "Protein", ylab = "Fat", main = "Protein Vs Fat",col="Red")
 # Creating a histogram
-  
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels")
 # Add limits to x-axis
-  
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels",xlim = c(0,100))  
 # Specify breaks of histogram
-  
-  
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels",xlim = c(0,100),breaks = 100)  
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels",xlim = c(0,100),breaks = 2000)    
 # Boxplots
-  
-
+boxplot(USDA$Sugar,main="Box plot of sugar levels")  
+boxplot(USDA$Sugar,main="Box plot of sugar levels",ylab="sugar (g)")  
 
 # Video 5 - Adding a variable
 
