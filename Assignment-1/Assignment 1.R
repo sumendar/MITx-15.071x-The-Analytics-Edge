@@ -1,5 +1,5 @@
-getwd()
-setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics")
+
+setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics/Assignment-1")
 getwd()
 ls()  
 # rm(list = ls()) #to remove old object in this working directory 
@@ -29,3 +29,5 @@ mvt$Weekday = weekdays(DateConvert)
 mvt$Date = DateConvert
 str(mvt) #now its totally convert to date format compare to earlier str function says it is Factor type
 table(mvt$Month)
+str(mvt)
+
