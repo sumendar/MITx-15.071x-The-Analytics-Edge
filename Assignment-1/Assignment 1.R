@@ -15,6 +15,7 @@ mvt$LocationDescription
 a <- table(mvt$LocationDescription)
 a[names(a)=="ALLEY"]
 summary(mvt) 
+summary(mvt)
 mvt$Date[2]
 #View(mvt)
 str(mvt)
