@@ -1,4 +1,4 @@
-setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics")
+setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics/Working with Data An Introduction to R")
 
 # VIDEO 2
 
@@ -64,7 +64,7 @@ write.csv(WHO_Europe,"WHO_Europe.csv") #write any file to the location
 ls()
 # 
 # # #####Removing variables########
-rm(WHO_Europe)
+#rm(WHO_Europe)
 ls()
 # 
 # 
