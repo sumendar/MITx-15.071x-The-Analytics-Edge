@@ -1,5 +1,5 @@
 getwd()
-setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics/Assignment-1")
+setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx-15.071x-The-Analytics-Edge/Unit-1--An-Introduction-to-Analytics/Assignment-1")
 getwd()
 ls()  
 # rm(list = ls()) #to remove old object in this working directory 

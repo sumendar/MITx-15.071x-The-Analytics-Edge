@@ -1,4 +1,4 @@
-setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics/Working with Data An Introduction to R")
+setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx-15.071x-The-Analytics-Edge/Unit-1--An-Introduction-to-Analytics/Working-with-Data-An-Introduction-to-R")
 
 # VIDEO 2
 
