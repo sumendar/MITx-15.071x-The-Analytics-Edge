@@ -1,0 +1,119 @@
+
+setwd("C:/Users/Sri/Documents/GitHub/RWD/MITx 15.071x The Analytics Edge/Unit-1--An-Introduction-to-Analytics")
+
+# Video 2 - Reading in the Dataset
+
+# Get the current directory
+  getwd()
+# Read the csv file
+USDA <- read.csv("USDA.csv")
+
+# Structure of the dataset
+str(USDA)  
+# Statistical summary
+summary(USDA)  
+
+
+# Video 3 - Basic Data Analysis
+
+# Vector notation
+USDA$Sodium
+  
+# Finding the index of the food with highest Sodium levels
+which.max(USDA$Sodium)
+  
+# Get names of variables in the dataset
+names(USDA)
+USDA$Calories
+which.max(USDA$Calories)
+USDA$Description[289]  
+# Get the name of the food with highest Sodium levels
+USDA$Description[265]
+  
+# Create a subset of the foods with Sodium content above 10,000mg
+HighSodium <- subset(USDA,Sodium>10000)
+  
+# Count the number of rows, or observations
+nrow(HighSodium)
+
+# Output names of the foods with high Sodium content
+HighSodium$Description
+  
+# Finding the index of CAVIAR in the dataset
+match("CAVIAR",USDA$Description)
+  
+# Find amount of Sodium in caviar
+USDA$Sodium [4154]
+  
+# Doing it in one command!
+USDA$Sodium[match("CAVIAR",USDA$Description)]
+  
+# Summary function over Sodium vector
+summary(USDA$Sodium)
+  
+# Standard deviation
+sd(USDA$Sodium)  
+sd(USDA$Sodium,na.rm = TRUE)
+# View(USDA)  
+  
+  # Video 4 - Plots
+
+# Scatter Plots
+plot(USDA$Protein,USDA$TotalFat)
+  
+# Add xlabel, ylabel and title
+plot(USDA$Protein,USDA$TotalFat,xlab = "Protein", ylab = "Fat", main = "Protein Vs Fat",col="Red")
+# Creating a histogram
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels")
+# Add limits to x-axis
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels",xlim = c(0,100))  
+# Specify breaks of histogram
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels",xlim = c(0,100),breaks = 100)  
+hist(USDA$VitaminC,xlab = "Vitamin c (mg)",main = "Histogram of Vitamin C Levels",xlim = c(0,100),breaks = 2000)    
+# Boxplots
+boxplot(USDA$Sugar,main="Box plot of sugar levels")  
+boxplot(USDA$Sugar,main="Box plot of sugar levels",ylab="sugar (g)")  
+
+# Video 5 - Adding a variable
+
+# Creating a variable that takes value 1 if the food has higher Sodium than average, 0 otherwise
+USDA$Sodium[1] > mean(USDA$Sodium,na.rm = TRUE)
+USDA$Sodium[50] > mean(USDA$Sodium,na.rm = TRUE)
+  
+# Adding the variable to the dataset
+HighSodium <- USDA$Sodium > mean(USDA$Sodium,na.rm = TRUE)  
+str(HighSodium)
+HighSodium <- as.numeric(USDA$Sodium > mean(USDA$Sodium,na.rm = TRUE))  
+USDA$HighSodium <- as.numeric(USDA$Sodium > mean(USDA$Sodium,na.rm = TRUE))  
+str(USDA)
+#rm(HighSodium) this command is used to remove a column from R environment only but
+#USDA$HighSodium <- NULL  ##through this command we can drop entire column from csv file from data frame
+str(USDA)
+#USDA$HighSodium <- NULL
+str(USDA)
+# Similarly for HighProtein, HigCarbs, HighFat
+USDA$HighProtein <- as.numeric(USDA$Protein > mean(USDA$Protein,na.rm = TRUE))
+str(USDA)  
+USDA$HigCarbs <- as.numeric(USDA$Carbohydrate > mean(USDA$Carbohydrate,na.rm = TRUE))
+str(USDA)  
+USDA$HighFat <- as.numeric(USDA$TotalFat > mean(USDA$TotalFat,na.rm = TRUE))
+str(USDA)  
+# Video 6 - Summary Tables
+
+# How many foods have higher Sodium level than average?
+table(USDA$HighSodium)  
+# How many foods have both high Sodium and high fat?
+table(USDA$HighSodium,USDA$HighFat)
+  
+# Average amount of iron sorted by high and low protein?
+tapply(USDA$Iron, USDA$HighProtein, mean,na.rm="TRUE")
+
+# Maximum level of Vitamin C in hfoods with high and low carbs?
+tapply(USDA$VitaminC, USDA$HigCarbs, max, na.rm="TRUE")
+tapply(USDA$VitaminC, USDA$HigCarbs, max,na.rm="TRUE")
+##error is coming check out  
+# Using summary function with tapply
+tapply(USDA$VitaminC, USDA$HigCarbs, summary,na.rm="TRUE")
+
+
+  
