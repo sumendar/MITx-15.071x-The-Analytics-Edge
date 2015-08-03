@@ -4,6 +4,7 @@ getwd()
 ls()  
 # rm(list = ls()) #to remove old object in this working directory 
 ls()
+########LOADING THE DATA  #########
 mvt <- read.csv("mvtWeek1.csv")
 str(mvt)
 max(mvt$ID)
@@ -15,6 +16,7 @@ mvt$LocationDescription
 a <- table(mvt$LocationDescription)
 a[names(a)=="ALLEY"]
 summary(mvt) 
+############UNDERSTANDING DATES IN R  ########
 summary(mvt)
 mvt$Date[2]
 #View(mvt)
@@ -28,6 +30,9 @@ mvt$Month = months(DateConvert)
 mvt$Weekday = weekdays(DateConvert)
 mvt$Date = DateConvert
 str(mvt) #now its totally convert to date format compare to earlier str function says it is Factor type
-table(mvt$Month)
-str(mvt)
-mvt <- read.csv("mvtWeek1.csv")
+#In which month did the fewest motor vehicle thefts occur?
+table(mvt$Month) #you can see that the month with the smallest number of observations is February. 
+
+
+
+  
