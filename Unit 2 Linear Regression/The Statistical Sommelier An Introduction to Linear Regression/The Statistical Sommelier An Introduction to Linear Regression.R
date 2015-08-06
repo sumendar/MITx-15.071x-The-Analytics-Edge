@@ -31,3 +31,5 @@ summary(model4)
 modelQQ5 <- lm(Price ~ HarvestRain + WinterRain, data = wine)
 summary(modelQQ5)
 ########VIDEO 6: CORRELATION AND MULTICOLLINEARITY############
+# CORRELATION : A measure of the linear relationship between variables
+
