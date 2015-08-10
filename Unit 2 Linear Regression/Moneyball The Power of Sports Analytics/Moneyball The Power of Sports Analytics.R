@@ -9,3 +9,4 @@ str(moneyball)
 plot(moneyball$RD, moneyball$W)
 winsReg <- lm(W ~ RD, data = moneyball)
 summary(winsReg)
+############QUICK QUESTION  1##############
