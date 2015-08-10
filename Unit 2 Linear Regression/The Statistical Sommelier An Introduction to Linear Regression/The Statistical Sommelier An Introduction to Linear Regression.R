@@ -52,3 +52,20 @@ summary(model5)
 cor(wine$HarvestRain,wine$WinterRain)
 cor(wine$WinterRain,wine$HarvestRain)
 ############VIDEO 7: MAKING PREDICTIONS#################
+wineTest = read.csv("wine_test.csv")
+str(wineTest)
+predictTest = predict(model4,newdata = wineTest)
+predictTest
+SSE <- sum((wineTest$Price-predictTest)^2)
+SST <- sum((wineTest$Price-mean(wine$Price))^2)
+1-SSE/SST
+###########VIDEO 8: COMPARING THE MODEL TO THE EXPERTS###########
+#we have developed is a linear regression model,
+#a simple but rather powerful model
+#for predicting quality of wines.
+
+# #in this first introductory lecture
+# to linear regression, is that an analytics approach that
+# uses data to build a model that improves decision making
+# is effective in a traditionally qualitative problem.
+
