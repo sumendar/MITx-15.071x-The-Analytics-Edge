@@ -10,6 +10,7 @@ summary(wine_test)
 #AGST----independent var
 model1 = lm(Price ~ AGST, data = wine)
 summary(model1)
+View(wine)
 model1$residuals
 SSE <- sum(model1$residuals^2)
 SSE
